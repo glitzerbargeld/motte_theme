@@ -2,6 +2,10 @@
 
 <?php
 
+/**ADD THEME SUPPORT */
+
+add_theme_support( 'custom-logo' );
+
 /**ADD SCRIPTS AND STYLES */
 
 add_action('wp_enqueue_scripts', function () {

@@ -1,15 +1,12 @@
-<?php
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php
 
-wp_head();
-?>
+    wp_head();
+    ?>
+</head>
 
 <body>
-<div class="video-container">
-      <video id="BgVideo" muted loop autoplay playsinline width="1280" height="720">
-        <source src="<?php echo get_theme_file_uri() . "/src/media/background.mp4" ?>" type="video/mp4">
-      </video>
-    </div>
-    <div class="container">
         <div id="overlay"></div>
         <header>
             <div id="nav" class="navbar-wrapper">
@@ -21,8 +18,16 @@ wp_head();
                 </div>
 
 
-                <img class="band-logo" src="src/media/BahnhofMotteLogokleinnegativ.png" style="display: flex;" alt="Bahnhof Motte Band" />
+                <!--img class="band-logo" src="<?php echo get_stylesheet_directory_uri() ?>/src/media/BahnhofMotteLogokleinnegativ.png" style="display: flex;" alt="Bahnhof Motte Band" /-->
+                <?php
+                $custom_logo_id = get_theme_mod('custom_logo');
+                $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
 
+                if (has_custom_logo()) {
+                    echo '<img class="band-logo" src="' . esc_url($logo[0]) . '" alt="' . get_bloginfo('name') . '">';
+                } else {
+                    echo '<h1>' . get_bloginfo('name') . '</h1>';
+                } ?>
 
                 <div class="menu">
                     <div class="menu-line menu-line-1"></div>

@@ -27,16 +27,28 @@ body {
   background-position: center;
 }
 
+.page-container {
+  max-width: 992px;
+  margin: auto;
+  padding: 150px 50px;
+}
+
 h1 {
   font-size: 3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 h2 {
   font-size: 2.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 h3 {
   font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .row {
@@ -96,7 +108,6 @@ h3 {
   background-color: white;
   overflow: hidden;
   margin: 10px;
-  border: 2px dashed #ccc;
   min-height: 170px;
   padding-top: 10%;
   max-width: 435px;
@@ -112,13 +123,15 @@ h3 {
   }
 }
 .section-2 {
-  display: block;
-  text-align: center;
-  background: rgba(252, 3, 219, 0.8);
-  padding: 10%;
-  border-top: 5px dotted black;
-  border-bottom: 5px dotted black;
-  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 5%;
+  background-image: url(c9bdabc2898c5066faa9.jpg);
+  background-size: cover;
+  background-position: bottom;
 }
 
 .section-2 h2 {
@@ -129,11 +142,26 @@ h3 {
   margin-top: 5%;
 }
 
+.video-wrapper {
+  flex-basis: 100%;
+}
+@media (min-width: 767.5px) {
+  .video-wrapper {
+    flex-basis: 45%;
+  }
+}
+
 .section-3 {
   height: auto;
-  background: rgba(217, 217, 217, 0.75);
+  background-image: url(421075746779cbb8b4a0.jpg);
+  background-size: cover;
   padding: 6rem 0;
   border-bottom: 5px dotted black;
+}
+@media (max-width: 567.5px) {
+  .section-3 {
+    background-image: url(384e04e08f8496052963.jpg);
+  }
 }
 
 .section-3 h1 {
@@ -156,7 +184,7 @@ h3 {
 .section-4 {
   height: 100vh;
   text-align: center;
-  background: rgba(217, 217, 217, 0.75);
+  background: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -367,14 +395,16 @@ h3 {
   position: relative;
   display: flex;
   margin: auto;
-  height: 50px;
+  height: 100%;
   display: block;
+  border-radius: 0 0 20px 20px;
 }
 
 @media (max-width: 567px) {
   .band-logo {
-    height: 40px;
+    height: 50px;
     margin: 10px;
+    border-radius: 20px;
   }
 }
 .icon-bar {
@@ -391,7 +421,7 @@ h3 {
     bottom: 0;
     left: 0;
     padding: 10px;
-    background: black;
+    background: white;
     justify-content: space-between;
   }
 }
@@ -401,7 +431,7 @@ h3 {
   transition: all 0.3s ease;
   padding: 10px;
   width: 35px;
-  color: white;
+  color: #ccb04a;
   font-size: 18px;
 }
 
@@ -436,6 +466,32 @@ a.nav-point {
 .icon-bar-2 a:hover {
   background-color: white;
   color: black;
+}
+
+#bm-hero {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url(111eeda211d2be0c1a17.jpg);
+  background-position: bottom;
+  background-size: cover;
+  height: 100vh;
+}
+#bm-hero .bm-flex-col {
+  flex-basis: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  #bm-hero .bm-flex-col {
+    flex-basis: 50%;
+  }
+}
+#bm-hero .headline-image {
+  width: 70%;
+  min-width: 350px;
 }
 
 .newalbum {
@@ -506,7 +562,7 @@ a.nav-point {
 .menu-line {
   width: 70%;
   height: 0.5rem;
-  background-color: white;
+  background-color: #fcdf74;
   position: relative;
   left: 0;
   transition: left 0.3s 0.3s, transform 0.3s;
@@ -716,7 +772,7 @@ a.nav-point {
   display: flex;
   justify-content: space-between;
   height: 80px;
-  background: black;
+  background: transparent;
   align-items: center;
   position: fixed;
   width: 100%;
